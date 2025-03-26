@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 
 :root {
-  --glow-color: hsl(186 100% 69%);
+  // --glow-color: hsl(186 100% 69%);
+  //   --glow-color: hsl(289 100% 69%);
+  --glow-color: hsl(312 73.5% 61.6%);
 }
 
 *,
@@ -10,22 +12,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: black;
-}
-
-.glowing-btn {
+.glowing-sign {
   position: relative;
   color: var(--glow-color);
   cursor: pointer;
@@ -34,7 +21,7 @@ body {
   border-radius: 0.45em;
   background: none;
   perspective: 2em;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
   font-size: 2em;
   font-weight: 900;
   letter-spacing: 1em;
@@ -64,7 +51,12 @@ body {
   animation: faulty-flicker 2s linear infinite;
 }
 
-.glowing-btn::before {
+.faulty-second-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 3s linear infinite;
+}
+
+.glowing-sign::before {
   content: '';
   position: absolute;
   top: 0;
@@ -78,7 +70,7 @@ body {
   pointer-events: none;
 }
 
-.glowing-btn::after {
+.glowing-sign::after {
   content: '';
   position: absolute;
   top: 0;
@@ -92,28 +84,30 @@ body {
   transition: opacity 100ms linear;
 }
 
-.glowing-btn:hover {
+.glowing-sign:hover {
   color: rgba(0, 0, 0, 0.8);
   text-shadow: none;
   animation: none;
+  border: 0.15em solid var(--glow-color);
 }
 
-.glowing-btn:hover .glowing-txt {
+.glowing-sign:hover .glowing-txt {
   animation: none;
 }
 
-.glowing-btn:hover .faulty-letter {
+.glowing-sign:hover .faulty-letter,
+.glowing-sign:hover .faulty-second-letter {
   animation: none;
   text-shadow: none;
   opacity: 1;
 }
 
-.glowing-btn:hover:before {
+.glowing-sign:hover:before {
   filter: blur(1.5em);
   opacity: 1;
 }
 
-.glowing-btn:hover:after {
+.glowing-sign:hover:after {
   opacity: 1;
 }
 
@@ -216,7 +210,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .glowing-btn {
+  .glowing-sign {
     font-size: 1em;
   }
 }

@@ -1,8 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.scss';
 import RootLayout from './layouts/RootLayout';
-import LandingPage from './routes/LandingPage/LandingPage';
-import PortfolioPage from './routes/PortfolioPage';
+import LandingPage from './routes/LandingPage';
+import HomePage from './routes/HomePage';
+import ProjectsPage from './routes/ProjectsPage';
+import ContactPage from './routes/ContactPage';
 
 const router = createBrowserRouter([
   {
@@ -13,9 +15,9 @@ const router = createBrowserRouter([
     path: '/',
     element: <RootLayout />,
     children: [
-      { path: 'portfolio', element: <PortfolioPage /> },
-      // { path: 'projects', element: <ProjectsPage /> },
-      // { path: 'contact', element: <ContactPage /> },
+      { path: 'home', element: <HomePage /> },
+      { path: 'projects', element: <ProjectsPage /> },
+      { path: 'contact', element: <ContactPage /> },
     ],
   },
 ]);
