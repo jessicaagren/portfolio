@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 html,
 body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
 }
 
 #root {
   margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
@@ -36,4 +41,9 @@ main {
   background: #111;
   display: flex;
   justify-content: center;
+}
+
+.ProjectsPage {
+  display: flex;
+  gap: 2rem;
 }
