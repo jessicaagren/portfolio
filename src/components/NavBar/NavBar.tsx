@@ -1,7 +1,7 @@
-import NeonButton from '../NeonButton/NeonButton';
+import NeonButton from '../NeonNavLink/NeonNavLink';
 import './Navbar.scss';
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <nav className='NavBar'>
       <NeonButton title='Home' to='/home' />
@@ -9,6 +9,4 @@ const Navbar = () => {
       <NeonButton title='Contact' to='/contact' />
     </nav>
   );
-};
-
-export default Navbar;
+}

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis');
+// @import url('https://fonts.googleapis.com/css?family=Dosis');
 
 :root {
   //   --glow-color: hsl(289 100% 69%);
   --glow-color: hsl(312 73.5% 61.6%);
 }
 
-.glowing-btn {
+.glowing-navlink {
   position: relative;
   color: var(--glow-color);
   cursor: pointer;
@@ -14,7 +14,7 @@
   border-radius: 0.45em;
   background: none;
   //   perspective: 2em;
-  font-family: 'Dosis', Helvetica, Arial, sans-serif;
+  // font-family: 'Dosis', Helvetica, Arial, sans-serif;
   font-size: 2em;
   font-weight: 900;
   letter-spacing: 0.25em;
@@ -28,12 +28,12 @@
   text-decoration: none;
 }
 
-.glowing-btn::after {
+.glowing-navlink::after {
   content: ' ';
   margin-right: -0.25em;
 }
 
-.glowing-btn:hover {
+.glowing-navlink:hover {
   color: rgba(0, 0, 0, 0.8);
   background-color: var(--glow-color);
   text-shadow: none;
@@ -41,29 +41,29 @@
   border: 0.15em solid var(--glow-color);
 }
 
-.glowing-btn:hover::before {
+.glowing-navlink:hover::before {
   filter: blur(1.5em);
   opacity: 1;
 }
 
-.glowing-btn:hover::after {
+.glowing-navlink:hover::after {
   opacity: 1;
 }
 
-.glowing-btn {
+.glowing-navlink {
   outline: none;
 }
 
-.glowing-btn:focus {
+.glowing-navlink:focus {
   outline: none;
   border-color: var(--glow-color);
 }
 
-.glowing-btn-text {
+.glowing-navlink-text {
   text-transform: uppercase;
 }
 
-.glowing-btn-text:hover {
+.glowing-navlink-text:hover {
   float: left;
   margin-right: -0.25em;
   //   -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
@@ -71,19 +71,19 @@
   //   -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
   //     0 0 0.45em var(--glow-color);
   //   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
-  animation: text-flicker-btn 5s linear infinite;
+  animation: text-flicker-navlink 5s linear infinite;
 }
 
 .active,
 .active:hover,
-.active .glowing-btn:hover,
-.active .glowing-btn-text {
+.active .glowing-navlink:hover,
+.active .glowing-navlink-text {
   background-color: var(--glow-color);
   color: rgba(0, 0, 0, 0.8);
   animation: none;
 }
 
-@keyframes text-flicker-btn {
+@keyframes text-flicker-navlink {
   0% {
     opacity: 1;
   }
