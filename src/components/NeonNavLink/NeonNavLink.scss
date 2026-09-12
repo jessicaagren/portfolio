@@ -31,6 +31,13 @@
   text-decoration: none;
 }
 
+@media (max-width: 600px) {
+  .glowing-navlink {
+    font-size: 1.1em;
+    letter-spacing: 0.15em;
+  }
+}
+
 .glowing-navlink::after {
   content: ' ';
   margin-right: -0.25em;
