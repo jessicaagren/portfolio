@@ -2,7 +2,19 @@
   --glow-color: hsl(312 73.5% 61.6%);
 }
 
-img {
+.projectLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ProjectComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectImg {
   width: 250px;
   height: 250px;
   background-size: cover;
@@ -15,21 +27,26 @@ img {
   --_c: #0000 0 25%, var(--c) 0 50%;
   --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
   --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
-  background: var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
-    var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
-  background-size: 200% var(--b), var(--b) 200%;
+  background:
+    var(--_g1) var(--_p, 25%) 0,
+    var(--_g2) 0 var(--_p, 125%),
+    var(--_g1) var(--_p, 125%) 100%,
+    var(--_g2) 100% var(--_p, 25%);
+  background-size:
+    200% var(--b),
+    var(--b) 200%;
   cursor: pointer;
   filter: grayscale(100%);
   transition: 0.5s;
 }
 
-img:hover {
+.projectImg:hover {
   --_p: 75%;
   //   --c: white;
   filter: grayscale(0%);
 }
 
-// img {
+// .projectImg {
 //   display: block;
 //   position: relative;
 //   width: 200px; /* Anpassa efter behov */
@@ -37,12 +54,12 @@ img:hover {
 //   transition: filter 0.3s;
 // }
 
-// .img-wrapper {
+// ..projectImg-wrapper {
 //   position: relative;
 //   display: inline-block;
 // }
 
-// .img-wrapper .border {
+// ..projectImg-wrapper .border {
 //   position: absolute;
 //   top: 0;
 //   left: 0;
@@ -52,7 +69,7 @@ img:hover {
 //   opacity: 0;
 // }
 
-// .img-wrapper:hover .border {
+// ..projectImg-wrapper:hover .border {
 //   opacity: 1;
 // }
 
