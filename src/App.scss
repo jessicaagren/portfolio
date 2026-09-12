@@ -46,12 +46,10 @@ main {
 }
 
 .ProjectsPage {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: min(100%, 900px);
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(100%, 1200px);
+  gap: 1.5rem;
 }
 
 @media (max-width: 600px) {
@@ -62,7 +60,7 @@ main {
   }
 
   .ProjectsPage {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 1.5rem;
   }
@@ -92,6 +90,34 @@ main {
   width: 50%;
 }
 
+.ProjectDetailsPage {
+  width: min(100%, 900px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.projectDetailsMainImage {
+  width: min(100%, 800px);
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.projectDetailsGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.projectDetailsGallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 @media (max-width: 600px) {
   .HomePage {
     width: 100%;
@@ -100,5 +126,9 @@ main {
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.6;
+  }
+
+  .ProjectDetailsPage {
+    width: 100%;
   }
 }
