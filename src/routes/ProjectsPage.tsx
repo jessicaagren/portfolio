@@ -7,7 +7,7 @@ export default function ProjectsPage() {
       {projects.map((project) => (
         <ProjectComponent
           key={project.slug}
-          img={project.img}
+          img={project.images[0]}
           altText={project.altText}
           name={project.name}
           link={`/projects/${project.slug}`}
