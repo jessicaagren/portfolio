@@ -7,7 +7,11 @@ export default function Footer() {
 
   return (
     <>
-      <footer className='Footer'>Jessica Ågren {getCurrentYear()}</footer>
+      <footer className='Footer'>
+        <a href='/contact' rel='noopener noreferrer'>
+          Jessica Ågren {getCurrentYear()}
+        </a>
+      </footer>
     </>
   );
 }
