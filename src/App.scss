@@ -47,3 +47,27 @@ main {
   display: flex;
   gap: 2rem;
 }
+
+.ContactPage,
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 2rem;
+
+    &:hover {
+      color: var(--glow-color);
+    }
+  }
+}
+
+.HomePage {
+  width: 50%;
+}
