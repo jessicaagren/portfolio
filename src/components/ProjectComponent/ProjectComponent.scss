@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.1rem;
 }
 
 .projectImg {
@@ -36,14 +37,18 @@
     200% var(--b),
     var(--b) 200%;
   cursor: pointer;
-  filter: grayscale(100%);
   transition: 0.5s;
 }
 
-.projectImg:hover {
-  --_p: 75%;
-  //   --c: white;
-  filter: grayscale(0%);
+@media (min-width: 601px) {
+  .projectImg {
+    filter: grayscale(100%);
+  }
+
+  .projectImg:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+  }
 }
 
 // .projectImg {
