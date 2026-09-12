@@ -1,16 +1,18 @@
 import ProjectComponent from '../components/ProjectComponent/ProjectComponent';
+import { projects } from '../data/projects';
 
 export default function ProjectsPage() {
   return (
     <div className='ProjectsPage'>
-      <ProjectComponent
-        img='https://usercontent.one/wp/biologi.ugglansno.se/wp-content/uploads/2019/10/wave-3473335_960_720.jpg?media=1676205504'
-        altText='hav'
-      />
-      <ProjectComponent
-        img='https://usercontent.one/wp/biologi.ugglansno.se/wp-content/uploads/2019/10/wave-3473335_960_720.jpg?media=1676205504'
-        altText='hav'
-      />
+      {projects.map((project) => (
+        <ProjectComponent
+          key={project.slug}
+          img={project.img}
+          altText={project.altText}
+          name={project.name}
+          link={`/projects/${project.slug}`}
+        />
+      ))}
     </div>
   );
 }
