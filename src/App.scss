@@ -101,8 +101,9 @@ main {
 
 .projectDetailsMainImage {
   width: min(100%, 800px);
+  height: auto;
   max-height: 500px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .projectDetailsGallery {
@@ -116,6 +117,45 @@ main {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.projectTechnologies {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.projectTechnologies h2 {
+  margin: 0 0 0.75rem;
+  color: var(--glow-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.technologyList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.technologyTag {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--glow-color) 65%, white 35%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--glow-color) 12%, #111 88%);
+  color: white;
+  font-size: 1.05rem;
+  line-height: 1.1;
+}
+
+.github-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--glow-color);
+  }
 }
 
 @media (max-width: 600px) {
