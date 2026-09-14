@@ -29,11 +29,29 @@ export default function ProjectDetailsPage() {
         </div>
       )}
       <p>{projectDetails.description}</p>
-      <ul>
-        {projectDetails.technologies.map((technology) => (
-          <li key={technology}>{technology}</li>
-        ))}
-      </ul>
+      <section
+        className='projectTechnologies'
+        aria-labelledby='technologies-heading'>
+        <h2 id='technologies-heading'>Technologies</h2>
+        <div className='technologyList'>
+          {projectDetails.technologies.map((technology) => (
+            <span className='technologyTag' key={technology}>
+              {technology}
+            </span>
+          ))}
+        </div>
+      </section>
+      {projectDetails.github && (
+        <p>
+          <a
+            href={projectDetails.github}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='github-link'>
+            View on GitHub
+          </a>
+        </p>
+      )}
     </article>
   );
 }
