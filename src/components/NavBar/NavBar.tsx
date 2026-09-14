@@ -1,5 +1,5 @@
 import NeonButton from '../NeonNavLink/NeonNavLink';
-import './Navbar.scss';
+import './NavBar.scss';
 
 export default function Navbar() {
   return (
