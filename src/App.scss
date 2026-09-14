@@ -35,6 +35,21 @@ main {
   padding: 2rem;
 }
 
+.LandingPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.landingContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .NavBar,
 .Footer {
   box-sizing: border-box;

@@ -7,25 +7,28 @@ import ProjectsPage from './routes/ProjectsPage';
 import ContactPage from './routes/ContactPage';
 import ProjectDetailsPage from './routes/ProjectDetailsPage';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <LandingPage />,
-  },
-  {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      { path: 'home', element: <HomePage /> },
-      {
-        path: 'projects',
-        element: <ProjectsPage />,
-      },
-      { path: 'projects/:project', element: <ProjectDetailsPage /> },
-      { path: 'contact', element: <ContactPage /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <LandingPage />,
+    },
+    {
+      path: '/',
+      element: <RootLayout />,
+      children: [
+        { path: 'home', element: <HomePage /> },
+        {
+          path: 'projects',
+          element: <ProjectsPage />,
+        },
+        { path: 'projects/:project', element: <ProjectDetailsPage /> },
+        { path: 'contact', element: <ContactPage /> },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL }
+);
 
 export default function App() {
   return <RouterProvider router={router} />;
