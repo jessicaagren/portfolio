@@ -1,5 +1,5 @@
 import folkuniversitetetImage from '../assets/Folkuniversitetet.png';
-import astronomyImage from '../assets/astronomy-API.png';
+import astronomyImage from '../assets/Astronomy-API.png';
 import scrollOfThronesImage from '../assets/scroll-of-thrones.png';
 import theLiteraryGardenImage from '../assets/the-literary-garden.png';
 import recipeInPiecesImage from '../assets/recipe-in-pieces.png';
