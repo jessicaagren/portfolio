@@ -3,9 +3,11 @@ import NeonSign from '../components/NeonSign/NeonSign';
 
 export default function LandingPage() {
   return (
-    <>
-      <NeonSign />
+    <div className='LandingPage'>
+      <div className='landingContent'>
+        <NeonSign />
+      </div>
       <Footer></Footer>
-    </>
+    </div>
   );
 }
