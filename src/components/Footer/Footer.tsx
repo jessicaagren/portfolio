@@ -1,4 +1,5 @@
 import './Footer.scss';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const getCurrentYear = () => {
@@ -8,9 +9,7 @@ export default function Footer() {
   return (
     <>
       <footer className='Footer'>
-        <a href='/contact' rel='noopener noreferrer'>
-          Jessica Ågren {getCurrentYear()}
-        </a>
+        <Link to='/contact'>Jessica Ågren {getCurrentYear()}</Link>
       </footer>
     </>
   );
