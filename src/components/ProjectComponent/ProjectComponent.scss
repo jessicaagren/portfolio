@@ -50,10 +50,16 @@
     // filter: grayscale(100%);
   }
 
-  // .projectLink:hover .projectImg {
-  //   --_p: 75%;
-  //   filter: grayscale(0%);
-  // }
+  .projectLink:hover .projectImg {
+    --_p: 75%;
+    // filter: grayscale(0%);
+  }
+}
+
+@media (max-width: 600px) {
+  .projectImg {
+    --_p: 75%;
+  }
 }
 
 // .projectImg {
