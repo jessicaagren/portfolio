@@ -110,7 +110,7 @@ export const devProjects: DevProject[] = [
     images: [rollToDoImage],
     description:
       'First project using Tailwind. Main concept is a to-do-list where you roll a D20 and "kill" a dragon by completing the tasks, earning different points based on the chore.',
-    technologies: ['Node.js', 'Express', 'MySQL'],
+    technologies: ['React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/jessicaagren/roll-to-do',
   },
 ];
