@@ -61,6 +61,12 @@ main {
 }
 
 .ProjectsPage {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.Projects {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   width: min(100%, 1200px);

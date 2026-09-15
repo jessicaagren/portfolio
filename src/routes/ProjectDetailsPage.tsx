@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { projects } from '../data/projects';
+import { devProjects } from '../data/projects';
 
 export default function ProjectDetailsPage() {
   const { project } = useParams<{ project: string }>();
-  const projectDetails = projects.find((item) => item.slug === project);
+  const projectDetails = devProjects.find((item) => item.slug === project);
 
   if (!projectDetails) {
     return <div className='ProjectDetailsPage'>Projektet hittades inte.</div>;

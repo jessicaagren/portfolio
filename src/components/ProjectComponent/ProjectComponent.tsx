@@ -18,7 +18,7 @@ export default function ProjectComponent({
     <Link className='projectLink' to={link}>
       <section className='ProjectComponent'>
         <img className='projectImg' src={img} alt={altText} />
-        <h2>{name}</h2>
+        <h3>{name}</h3>
       </section>
     </Link>
   );
