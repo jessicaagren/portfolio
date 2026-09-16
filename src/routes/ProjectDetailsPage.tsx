@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { commProjects, devProjects } from '../data/projects';
 
 export default function ProjectDetailsPage() {
   const { project } = useParams<{ project: string }>();
+  const [activeImage, setActiveImage] = useState(0);
   const projectDetails = [...devProjects, ...commProjects].find(
     (item) => item.slug === project,
   );
@@ -11,25 +13,60 @@ export default function ProjectDetailsPage() {
     return <div className='ProjectDetailsPage'>Projektet hittades inte.</div>;
   }
 
+  const imageCount = projectDetails.images.length;
+
+  const showPreviousImage = () => {
+    setActiveImage((currentImage) =>
+      currentImage === 0 ? imageCount - 1 : currentImage - 1,
+    );
+  };
+
+  const showNextImage = () => {
+    setActiveImage((currentImage) => (currentImage + 1) % imageCount);
+  };
+
   return (
     <article className='ProjectDetailsPage'>
       <h1>{projectDetails.name}</h1>
-      <img
-        className='projectDetailsMainImage'
-        src={projectDetails.images[0]}
-        alt={projectDetails.altText}
-      />
-      {projectDetails.images.length > 1 && (
-        <div className='projectDetailsGallery'>
-          {projectDetails.images.slice(1).map((image, index) => (
-            <img
-              key={image}
-              src={image}
-              alt={`${projectDetails.altText} ${index + 2}`}
-            />
-          ))}
-        </div>
-      )}
+      <div className='projectDetailsCarousel'>
+        <img
+          className='projectDetailsMainImage'
+          src={projectDetails.images[activeImage]}
+          alt={`${projectDetails.altText} ${activeImage + 1}`}
+        />
+        {imageCount > 1 && (
+          <>
+            <button
+              className='carouselButton carouselButtonPrevious'
+              type='button'
+              onClick={showPreviousImage}
+              aria-label='Föregående bild'>
+              <span className='carouselArrow carouselArrowPrevious' />
+            </button>
+            <button
+              className='carouselButton carouselButtonNext'
+              type='button'
+              onClick={showNextImage}
+              aria-label='Nästa bild'>
+              <span className='carouselArrow carouselArrowNext' />
+            </button>
+            <div className='carouselIndicators' aria-label='Välj bild'>
+              {projectDetails.images.map((image, index) => (
+                <button
+                  className={`carouselIndicator ${
+                    index === activeImage ? 'active' : ''
+                  }`}
+                  key={image}
+                  type='button'
+                  onClick={() => setActiveImage(index)}
+                  aria-label={`Visa bild ${index + 1}`}
+                  aria-current={index === activeImage ? 'true' : undefined}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
       <p>{projectDetails.description}</p>
       {'technologies' in projectDetails &&
         Array.isArray(projectDetails.technologies) && (
