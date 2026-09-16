@@ -1,9 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { devProjects } from '../data/projects';
+import { commProjects, devProjects } from '../data/projects';
 
 export default function ProjectDetailsPage() {
   const { project } = useParams<{ project: string }>();
-  const projectDetails = devProjects.find((item) => item.slug === project);
+  const projectDetails = [...devProjects, ...commProjects].find(
+    (item) => item.slug === project,
+  );
 
   if (!projectDetails) {
     return <div className='ProjectDetailsPage'>Projektet hittades inte.</div>;
@@ -29,29 +31,33 @@ export default function ProjectDetailsPage() {
         </div>
       )}
       <p>{projectDetails.description}</p>
-      <section
-        className='projectTechnologies'
-        aria-labelledby='technologies-heading'>
-        <h2 id='technologies-heading'>Technologies</h2>
-        <div className='technologyList'>
-          {projectDetails.technologies.map((technology) => (
-            <span className='technologyTag' key={technology}>
-              {technology}
-            </span>
-          ))}
-        </div>
-      </section>
-      {projectDetails.github && (
-        <p>
-          <a
-            href={projectDetails.github}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='github-link'>
-            View on GitHub
-          </a>
-        </p>
-      )}
+      {'technologies' in projectDetails &&
+        Array.isArray(projectDetails.technologies) && (
+          <section
+            className='projectTechnologies'
+            aria-labelledby='technologies-heading'>
+            <h2 id='technologies-heading'>Technologies</h2>
+            <div className='technologyList'>
+              {projectDetails.technologies.map((technology) => (
+                <span className='technologyTag' key={technology}>
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+      {'github' in projectDetails &&
+        typeof projectDetails.github === 'string' && (
+          <p>
+            <a
+              href={projectDetails.github}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='github-link'>
+              View on GitHub
+            </a>
+          </p>
+        )}
     </article>
   );
 }
