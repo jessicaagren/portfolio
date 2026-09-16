@@ -37,10 +37,12 @@ main {
 
 .LandingPage {
   width: 100%;
-  min-height: 100dvh;
+  height: 100dvh;
+  min-height: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .landingContent {
