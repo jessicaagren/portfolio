@@ -136,4 +136,11 @@ export const commProjects: CommProject[] = [
     description:
       'A project with three fellow colleagues. A campaign on social media for a start up, pertaining to mental health. I was responsible for the copy.',
   },
+  {
+    slug: 'more-to-come',
+    name: 'More to come...',
+    altText: 'More to come...',
+    images: [placeholderImg],
+    description: 'More to come...',
+  },
 ];
