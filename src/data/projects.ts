@@ -4,6 +4,10 @@ import scrollOfThronesImage from '../assets/scroll-of-thrones.png';
 import theLiteraryGardenImage from '../assets/the-literary-garden.png';
 import recipeInPiecesImage from '../assets/recipe-in-pieces.png';
 import rollToDoImage from '../assets/roll-to-do.png';
+import HBImage1 from '../assets/HB1.png';
+import HBImage2 from '../assets/HB2.png';
+import HBImage3 from '../assets/HB3.png';
+import delaHelaDig from '../assets/dela-hela-dig.png';
 const placeholderImg =
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFKwKKIne5qyG8tU25RYExTtpXsXX9OJt1Xi9Fmtdcnf6JQsEMsSX1vQ&s=10';
 
@@ -117,10 +121,19 @@ export const devProjects: DevProject[] = [
 
 export const commProjects: CommProject[] = [
   {
-    slug: 'test',
-    name: 'test',
-    altText: 'test',
-    images: [placeholderImg],
-    description: 'Coming.',
+    slug: 'hogskolan-i-boras',
+    name: 'Högskolan i Borås',
+    altText: 'Högskolan i Borås',
+    images: [HBImage1, HBImage2, HBImage3],
+    description:
+      'Examples of different communications material for Högskolan i Borås (University of Borås). Printed folder for new student ambassadors, layout and planning by me. Also articles for the website, where I conducted the interviews and published the texts online.',
+  },
+  {
+    slug: 'dela-hela-dig',
+    name: 'Dela Hela Dig',
+    altText: 'Dela Hela Dig',
+    images: [delaHelaDig],
+    description:
+      'A project with three fellow colleagues. A campaign on social media for a start up, pertaining to mental health. I was responsible for the copy.',
   },
 ];
