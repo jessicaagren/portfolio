@@ -110,7 +110,25 @@ main {
 }
 
 .HomePage {
-  width: 50%;
+  width: min(100%, 900px);
+  flex-direction: row;
+  gap: clamp(2rem, 6vw, 5rem);
+  text-align: left;
+}
+
+.profileImage {
+  flex: 0 0 clamp(10rem, 24vw, 17rem);
+  width: clamp(10rem, 24vw, 17rem);
+  aspect-ratio: 1;
+  border: 0.35rem solid var(--glow-color);
+  border-radius: 50%;
+  object-fit: cover;
+  // box-shadow: 0 0 1.25rem color-mix(in srgb, var(--glow-color) 65%, transparent);
+}
+
+.HomePage p {
+  max-width: 34rem;
+  margin: 0;
 }
 
 .ProjectDetailsPage {
@@ -258,10 +276,16 @@ main {
   .HomePage {
     width: 100%;
     box-sizing: border-box;
+    flex-direction: column;
     padding: 0 0.5rem;
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.6;
+  }
+
+  .profileImage {
+    flex-basis: auto;
+    width: min(58vw, 13rem);
   }
 
   .ProjectDetailsPage {
