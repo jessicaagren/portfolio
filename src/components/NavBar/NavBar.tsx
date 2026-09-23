@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import NeonButton from '../NeonNavLink/NeonNavLink';
 import './NavBar.scss';
 
@@ -25,7 +26,11 @@ export default function Navbar() {
           isLightMode ? 'Switch to dark mode' : 'Switch to light mode'
         }
         aria-pressed={isLightMode}>
-        {isLightMode ? '☾' : '☀'}
+        {isLightMode ? (
+          <MdDarkMode aria-hidden='true' />
+        ) : (
+          <MdLightMode aria-hidden='true' />
+        )}
       </button>
     </nav>
   );
