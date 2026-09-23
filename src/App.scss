@@ -80,10 +80,12 @@ main {
   main {
     width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .Projects {
+    width: 100%;
+    box-sizing: border-box;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
@@ -234,8 +236,12 @@ main {
 }
 
 .projectDescription {
+  width: min(100%, 42rem);
+  margin: 0 auto;
   font-size: 1.3rem;
-  line-height: 1.5;
+  line-height: 1.7;
+  text-align: center;
+  text-wrap: pretty;
   color: white;
 }
 
@@ -296,5 +302,11 @@ main {
 
   .ProjectDetailsPage {
     width: 100%;
+  }
+
+  .projectDescription {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.65;
   }
 }
