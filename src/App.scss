@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
+:root {
+  --surface-color: #111;
+  --text-color: white;
+  --muted-surface-color: #1d1d1d;
+}
+
+:root[data-theme='light'] {
+  --surface-color: #f7f3f6;
+  --text-color: #241d22;
+  --muted-surface-color: #ebe1e8;
+}
+
 html,
 body {
   height: 100%;
@@ -20,9 +32,12 @@ body {
 
 body {
   min-height: 100vh;
-  background: #111;
+  background: var(--surface-color);
   margin: 0;
-  color: white;
+  color: var(--text-color);
+  transition:
+    background 0.25s,
+    color 0.25s;
 }
 
 main {
@@ -58,7 +73,7 @@ main {
   box-sizing: border-box;
   width: 100%;
   padding: 1rem;
-  background: #111;
+  background: var(--surface-color);
   display: flex;
   justify-content: center;
 }
@@ -100,7 +115,7 @@ main {
   text-align: center;
   font-size: 1.5rem;
   a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s;
     font-size: 2rem;
@@ -169,8 +184,8 @@ main {
   height: 2.5rem;
   border: 1px solid var(--glow-color);
   border-radius: 50%;
-  background: rgb(17 17 17 / 85%);
-  color: white;
+  background: color-mix(in srgb, var(--surface-color) 85%, transparent);
+  color: var(--text-color);
   cursor: pointer;
   transform: translateY(-50%);
   transition:
@@ -197,7 +212,7 @@ main {
 .carouselButton:hover,
 .carouselButton:focus-visible {
   background: var(--glow-color);
-  color: #111;
+  color: var(--surface-color);
   outline: none;
 }
 
@@ -242,7 +257,7 @@ main {
   line-height: 1.7;
   text-align: center;
   text-wrap: pretty;
-  color: white;
+  color: var(--text-color);
 }
 
 .projectTechnologies {
@@ -252,7 +267,7 @@ main {
 
 .projectTechnologies h2 {
   margin: 0 0 0.75rem;
-  color: white;
+  color: var(--text-color);
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -266,16 +281,21 @@ main {
 
 .technologyTag {
   padding: 0.45rem 0.85rem;
-  border: 1px solid color-mix(in srgb, var(--glow-color) 65%, white 35%);
+  border: 1px solid
+    color-mix(in srgb, var(--glow-color) 65%, var(--text-color) 35%);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--glow-color) 12%, #111 88%);
-  color: white;
+  background: color-mix(
+    in srgb,
+    var(--glow-color) 12%,
+    var(--muted-surface-color) 88%
+  );
+  color: var(--text-color);
   font-size: 1.05rem;
   line-height: 1.1;
 }
 
 .github-link {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s;
 

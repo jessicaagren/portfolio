@@ -9,6 +9,30 @@
   box-sizing: border-box;
 }
 
+.themeToggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--glow-color);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.themeToggle:hover,
+.themeToggle:focus-visible {
+  background: var(--glow-color);
+  color: var(--surface-color);
+  outline: none;
+}
+
 @media (max-width: 600px) {
   .NavBar {
     gap: 0.75rem;
