@@ -67,7 +67,7 @@ export default function ProjectDetailsPage() {
           </>
         )}
       </div>
-      <p>{projectDetails.description}</p>
+      <p className='projectDescription'>{projectDetails.description}</p>
       {'technologies' in projectDetails &&
         Array.isArray(projectDetails.technologies) && (
           <section
