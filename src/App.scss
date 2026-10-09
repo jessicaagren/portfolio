@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
 :root {
-  --surface-color: #111;
+  --surface-color: #1b000e;
   --text-color: white;
   --muted-surface-color: #1d1d1d;
 }
 
 :root[data-theme='light'] {
-  --surface-color: #f7f3f6;
+  --surface-color: #ffe4f8;
   --text-color: #241d22;
   --muted-surface-color: #ebe1e8;
 }
