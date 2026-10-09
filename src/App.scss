@@ -2,13 +2,13 @@
 
 :root {
   --surface-color: #1b000e;
-  --text-color: white;
+  --text-color: #ffe4f8;
   --muted-surface-color: #1d1d1d;
 }
 
 :root[data-theme='light'] {
   --surface-color: #ffe4f8;
-  --text-color: #241d22;
+  --text-color: #1b000e;
   --muted-surface-color: #ebe1e8;
 }
 
